@@ -4,7 +4,7 @@ Portfolio web profesional desarrollado con HTML, CSS, JavaScript y Python (Flask
 
 ##  Preview
 
-** Visita el sitio:**  [https://portfolio-notexer.vercel.app](https://portfolio-notexer.vercel.app)
+** Visita el sitio: **  [https://portfolio-notexer.vercel.app](https://portfolio-notexer.vercel.app)
 
 ##  Características
 
