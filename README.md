@@ -15,7 +15,7 @@ Portfolio web profesional desarrollado con HTML, CSS, JavaScript y Python (Flask
 - **Descarga de CV**: Función directa para descargar curriculum vitae
 - **Enlaces a Redes Sociales**: Conexiones a LinkedIn, GitHub, Discord, Instagram y Twitter/X
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 ### Frontend
 - **HTML5**: Estructura semántica y accesible
@@ -26,7 +26,7 @@ Portfolio web profesional desarrollado con HTML, CSS, JavaScript y Python (Flask
 - **Python**: Lógica del servidor
 - **Flask**: Framework web para manejo de rutas y formularios
 
-## 📋 Secciones del Portfolio
+##  Secciones del Portfolio
 
 1. **Home**: Presentación inicial con enlaces a redes sociales y descarga de CV
 2. **About Me**: Descripción profesional y enfoque en QA Testing
