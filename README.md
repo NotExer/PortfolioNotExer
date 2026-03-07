@@ -1,12 +1,12 @@
-# 🚀 Portfolio Personal - NotExer
+#  Portfolio Personal - NotExer
 
 Portfolio web profesional desarrollado con HTML, CSS, JavaScript y Python (Flask). Presenta mi experiencia como QA Tester y Full Stack Developer, destacando habilidades técnicas, experiencia laboral y proyectos.
 
-## 📺 Preview
+##  Preview
 
-**🌐 Visita el sitio:**  [https://portfolio-notexer.vercel.app](https://portfolio-notexer.vercel.app)
+** Visita el sitio:**  [https://portfolio-notexer.vercel.app](https://portfolio-notexer.vercel.app)
 
-## ✨ Características
+##  Características
 
 - **Diseño Responsivo**: Adaptable a dispositivos móviles, tablets y desktop
 - **Animaciones Fluidas**: Experiencia de usuario interactiva con animaciones CSS
@@ -37,7 +37,7 @@ Portfolio web profesional desarrollado con HTML, CSS, JavaScript y Python (Flask
 4. **Projects**: Sección de proyectos (próximamente)
 5. **Contact**: Formulario de contacto funcional
 
-## 🚀 Instalación y Uso
+##  Instalación y Uso
 
 ### Prerrequisitos
 ```bash
@@ -74,7 +74,7 @@ python app.py
 http://localhost:5000
 ```
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 portfolio/
@@ -92,7 +92,7 @@ portfolio/
 └── README.md
 ```
 
-## 🎨 Características de Diseño
+##  Características de Diseño
 
 - **Paleta de Colores**: Diseño oscuro profesional
 - **Tipografía**: Fuentes modernas y legibles
@@ -100,7 +100,7 @@ portfolio/
 - **Animaciones**: Transiciones suaves al hacer scroll
 - **UX/UI**: Interfaz limpia enfocada en la experiencia del usuario
 
-## 📧 Contacto
+##  Contacto
 
 - **LinkedIn**: [Samuel Gomez Restrepo](https://www.linkedin.com/in/samuel-gomez-restrepo-717238191/)
 - **GitHub**: [@NotExer](https://github.com/NotExer)
@@ -108,7 +108,7 @@ portfolio/
 - **Instagram**: [@not_exer](https://www.instagram.com/not_exer/)
 - **Twitter/X**: [@Not_Exer](https://x.com/Not_Exer)
 
-## 📝 Experiencia Profesional
+##  Experiencia Profesional
 
 ### QA Tester - Webhelp (2023-2024)
 Testing de software y aseguramiento de calidad en entornos web, móvil y telefonía.
@@ -116,7 +116,7 @@ Testing de software y aseguramiento de calidad en entornos web, móvil y telefon
 ### Developer - Agencias Nacionales (2025-Actualidad)
 Programador y Analista de Datos, utilizando herramientas de automatización e inteligencia artificial.
 
-## 🔄 Actualizaciones Futuras
+##  Actualizaciones Futuras
 
 - [ ] Agregar sección de proyectos completados
 - [ ] Implementar modo claro/oscuro
@@ -124,10 +124,10 @@ Programador y Analista de Datos, utilizando herramientas de automatización e in
 - [ ] Integrar sistema de comentarios
 - [ ] Añadir analytics
 
-## 📄 Licencia
+##  Licencia
 
 Este proyecto es de uso personal. Todos los derechos reservados © 2025 NotExer
 
 ---
 
-⭐ Si te gusta este proyecto, no olvides darle una estrella en GitHub!
+ Si te gusta este proyecto, no olvides darle una estrella en GitHub!
