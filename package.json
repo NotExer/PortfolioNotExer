@@ -9,5 +9,8 @@
     "devDependencies": {
         "@tailwindcss/cli": "^4.2.0",
         "tailwindcss": "^4.1.18"
+    },
+    "dependencies": {
+        "@vercel/speed-insights": "^2.0.0"
     }
 }
