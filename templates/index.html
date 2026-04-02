@@ -434,7 +434,7 @@
             <input type="email" name="email" placeholder="Tu Email" data-i18n-placeholder="contact_email" class="w-full bg-[#0a0a0a] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-midu-purple transition-all" required />
           </div>
           <textarea name="message" rows="5" placeholder="Tu Mensaje" data-i18n-placeholder="contact_message" class="w-full bg-[#0a0a0a] border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-midu-purple transition-all" required></textarea>
-          <button type="submit" class="w-full py-4 bg-midu-purple text-black font-black uppercase tracking-widest rounded-xl hover:bg-midu-blue hover:text-white transition-all transform hover:-translate-y-1" data-i18n="contact_send">Enviar Señal</button>
+          <button type="submit" class="w-full py-4 bg-midu-purple text-black font-black uppercase tracking-widest rounded-xl hover:bg-midu-blue hover:text-white transition-all transform hover:-translate-y-1" data-i18n="contact_send">Enviar Mensaje</button>
           <span class="general-error-message block text-center text-red-500 text-sm"></span>
         </form>
       </div>
@@ -446,6 +446,7 @@
     © 2026 NotExer
   </footer>
 
+  <script defer src="/_vercel/insights/script.js"></script>
   <script src="{{ url_for('static', filename='scripts.js') }}"></script>
   <script>
     const observer = new IntersectionObserver((entries) => {
