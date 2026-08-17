@@ -1,0 +1,63 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "NotExer",
+  description =
+    "I'm NotExer a front back developer and QA tester. Explore my projects, discover my skills and contact me to collaborate on innovative ideas. Visit my github page!",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL("/og-image.webp", Astro.site);
+---
+
+<!doctype html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NotExer" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:locale" content="es_CO" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+
+    <title>{title}</title>
+
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+
+        try {
+          const storedTheme = localStorage.getItem("notexer-theme");
+          const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          root.dataset.theme = storedTheme || (systemDark ? "dark" : "light");
+        } catch {
+          root.dataset.theme = "light";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="page-backdrop" aria-hidden="true"></div>
+    <slot />
+  </body>
+</html>

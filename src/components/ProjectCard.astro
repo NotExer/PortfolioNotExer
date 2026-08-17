@@ -1,0 +1,72 @@
+---
+import type { TranslationKey } from "../data/site";
+import { translations } from "../data/site";
+import Icon from "./Icon.astro";
+
+interface Props {
+  project: {
+    title: string;
+    href: string;
+    video: string;
+    descriptionKey: TranslationKey;
+    stack: readonly string[];
+    tone: string;
+  };
+  index: number;
+}
+
+const { project, index } = Astro.props;
+const t = translations.es;
+const number = String(index + 1).padStart(2, "0");
+---
+
+<article class={`project-card surface-card project-tone-${project.tone} reveal-on-scroll`}>
+  <div class="project-media" data-project-media>
+    <div class="project-placeholder" aria-hidden="true">
+      <span>{number}</span>
+      <strong>{project.title}</strong>
+    </div>
+    <video
+      playsinline
+      controls
+      preload="none"
+      aria-label={`${t.project_preview}: ${project.title}`}
+      data-i18n-aria="project_preview"
+      data-project-title={project.title}
+      data-project-video
+      data-src={project.video}
+    ></video>
+    <button
+      class="video-toggle"
+      type="button"
+      data-video-toggle
+      data-i18n-aria="project_preview"
+      data-project-title={project.title}
+      aria-label={`${t.project_preview}: ${project.title}`}
+    >
+      <Icon name="play" size={22} />
+    </button>
+    <noscript><a class="video-fallback" href={project.video}>{t.project_preview}</a></noscript>
+  </div>
+
+  <div class="project-body">
+    <div class="project-title-row">
+      <p class="project-number" aria-hidden="true">{number}</p>
+      <a
+        href={project.href}
+        target="_blank"
+        rel="noreferrer"
+        data-project-external
+        data-project-title={project.title}
+        aria-label={`${project.title}. ${t.project_external}`}
+      >
+        <span>{project.title}</span>
+        <Icon name="external" size={18} />
+      </a>
+    </div>
+    <p class="project-description" data-i18n={project.descriptionKey}>{t[project.descriptionKey]}</p>
+    <ul class="project-stack" aria-label={t.technologies_label} data-i18n-aria="technologies_label">
+      {project.stack.map((technology) => <li>{technology}</li>)}
+    </ul>
+  </div>
+</article>

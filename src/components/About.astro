@@ -1,0 +1,22 @@
+---
+import { translations } from "../data/site";
+
+const t = translations.es;
+---
+
+<section id="About" class="content-section section-anchor" aria-labelledby="about-title">
+  <div class="section-heading reveal-on-scroll">
+    <p class="section-index" aria-hidden="true">01</p>
+    <h2 id="about-title" data-i18n="about_title">{t.about_title}</h2>
+    <div class="heading-rule" aria-hidden="true"></div>
+  </div>
+
+  <div class="about-grid">
+    <article class="surface-card prose-card reveal-on-scroll">
+      <p data-i18n-html="about_p1" set:html={t.about_p1} />
+    </article>
+    <article class="surface-card prose-card reveal-on-scroll">
+      <p data-i18n-html="about_p2" set:html={t.about_p2} />
+    </article>
+  </div>
+</section>
