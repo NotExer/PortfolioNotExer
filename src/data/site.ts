@@ -20,6 +20,7 @@ import python from "../assets/images/Python.webp";
 import react from "../assets/images/React.webp";
 import selenium from "../assets/images/Selenium.webp";
 import tailwind from "../assets/images/Tailwind.webp";
+import typescript from "../assets/images/TypeScript.webp";
 import vscode from "../assets/images/Vscode.webp";
 
 export const translations = {
@@ -169,6 +170,7 @@ export const skillGroups: Array<{ key: TranslationKey; items: SkillItem[] }> = [
       { name: "HTML", image: html },
       { name: "CSS", image: css },
       { name: "JS", image: javascript },
+      { name: "TypeScript", image: typescript },
       { name: "Python", image: python },
     ],
   },
