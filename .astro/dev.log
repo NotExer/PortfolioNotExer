@@ -1,0 +1,64 @@
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"Generated 2ms","label":"types","level":"info"}
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"Re-optimizing dependencies because vite config has changed","label":"vite","level":"info"}
+{"message":" astro  v7.2.2 ready in 2635 ms\n┃ Local    http://127.0.0.1:4321/","label":"SKIP_FORMAT","level":"info"}
+{"message":"watching for file changes...","label":null,"level":"info"}
+{"message":"[200] / 46ms","label":null,"level":"info"}
+{"message":"[200] / 10ms","label":null,"level":"info"}
+{"message":"[200] / 8ms","label":null,"level":"info"}
+{"message":"dependency optimized: @vercel/speed-insights","label":"vite","level":"info"}
+{"message":"[200] / 7ms","label":null,"level":"info"}
+{"message":"[200] /_image 60ms","label":null,"level":"info"}
+{"message":"[200] /_image 61ms","label":null,"level":"info"}
+{"message":"[200] /_image 62ms","label":null,"level":"info"}
+{"message":"[200] /_image 63ms","label":null,"level":"info"}
+{"message":"[200] /_image 64ms","label":null,"level":"info"}
+{"message":"[200] /_image 14ms","label":null,"level":"info"}
+{"message":"[200] /_image 17ms","label":null,"level":"info"}
+{"message":"[200] /_image 188ms","label":null,"level":"info"}
+{"message":"[200] / 11ms","label":null,"level":"info"}
+{"message":"[200] /_image 8ms","label":null,"level":"info"}
+{"message":"[200] /_image 8ms","label":null,"level":"info"}
+{"message":"[200] /_image 7ms","label":null,"level":"info"}
+{"message":"[200] /_image 8ms","label":null,"level":"info"}
+{"message":"[200] /_image 9ms","label":null,"level":"info"}
+{"message":"[200] /_image 14ms","label":null,"level":"info"}
+{"message":"[200] /_image 10ms","label":null,"level":"info"}
+{"message":"[200] /_image 146ms","label":null,"level":"info"}
+{"message":"[200] /_image 8ms","label":null,"level":"info"}
+{"message":"[200] /_image 10ms","label":null,"level":"info"}
+{"message":"[200] /_image 10ms","label":null,"level":"info"}
+{"message":"[200] /_image 12ms","label":null,"level":"info"}
+{"message":"[200] /_image 13ms","label":null,"level":"info"}
+{"message":"[200] /_image 9ms","label":null,"level":"info"}
+{"message":"[200] /_image 8ms","label":null,"level":"info"}
+{"message":"[200] /_image 11ms","label":null,"level":"info"}
+{"message":"[200] /_image 15ms","label":null,"level":"info"}
+{"message":"[200] /_image 37ms","label":null,"level":"info"}
+{"message":"[200] /_image 7ms","label":null,"level":"info"}
+{"message":"[200] /_image 10ms","label":null,"level":"info"}
+{"message":"[200] /_image 10ms","label":null,"level":"info"}
+{"message":"[200] /_image 9ms","label":null,"level":"info"}
+{"message":"[200] /_image 11ms","label":null,"level":"info"}
+{"message":"[200] /_image 19ms","label":null,"level":"info"}
+{"message":"[200] /_image 11ms","label":null,"level":"info"}
+{"message":"[200] /_image 13ms","label":null,"level":"info"}
+{"message":"[200] / 6ms","label":null,"level":"info"}
+{"message":"[200] /_image 8ms","label":null,"level":"info"}
+{"message":"[200] /_image 7ms","label":null,"level":"info"}
+{"message":"[200] /_image 8ms","label":null,"level":"info"}
+{"message":"[200] /_image 9ms","label":null,"level":"info"}
+{"message":"[200] /_image 10ms","label":null,"level":"info"}
+{"message":"[200] /_image 6ms","label":null,"level":"info"}
+{"message":"[200] /_image 10ms","label":null,"level":"info"}
+{"message":"[200] /_image 124ms","label":null,"level":"info"}
+{"message":"[200] / 6ms","label":null,"level":"info"}
+{"message":"[200] /_image 8ms","label":null,"level":"info"}
+{"message":"[200] /_image 7ms","label":null,"level":"info"}
+{"message":"[200] /_image 6ms","label":null,"level":"info"}
+{"message":"[200] /_image 9ms","label":null,"level":"info"}
+{"message":"[200] /_image 8ms","label":null,"level":"info"}
+{"message":"[200] /_image 6ms","label":null,"level":"info"}
+{"message":"[200] /_image 14ms","label":null,"level":"info"}
+{"message":"[200] /_image 125ms","label":null,"level":"info"}

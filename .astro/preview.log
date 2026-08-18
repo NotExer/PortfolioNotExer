@@ -1,0 +1,6 @@
+[preview] The @astrojs/vercel adapter does not support the preview command.
+  Location:
+    C:\Users\samur\Downloads\PortfolioNotExer\node_modules\astro\dist\core\preview\index.js:49:11
+  Stack trace:
+    at preview (file:///C:/Users/samur/Downloads/PortfolioNotExer/node_modules/astro/dist/core/preview/index.js:49:11)
+    at async runCommand (file:///C:/Users/samur/Downloads/PortfolioNotExer/node_modules/astro/dist/cli/index.js:197:22)
