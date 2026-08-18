@@ -1,0 +1,79 @@
+---
+import { Image } from "astro:assets";
+import { experiences, skillGroups, translations } from "../data/site";
+import Icon from "./Icon.astro";
+
+const t = translations.es;
+---
+
+<section id="Skills" class="content-section section-anchor" aria-labelledby="skills-title">
+  <div class="section-heading centered-heading reveal-on-scroll">
+    <p class="section-index" aria-hidden="true">02</p>
+    <div>
+      <h2 id="skills-title">
+        <span data-i18n="skills_title_1">{t.skills_title_1}</span><span
+          class="gradient-text"
+          data-i18n="skills_title_2">{t.skills_title_2}</span
+        >
+      </h2>
+      <p class="section-subtitle" data-i18n="skills_subtitle">{t.skills_subtitle}</p>
+    </div>
+  </div>
+
+  <div class="skills-layout">
+    <div class="experience-column reveal-on-scroll">
+      <h3 class="subsection-title">
+        <span class="subsection-icon"><Icon name="briefcase" /></span>
+        <span data-i18n="skills_path">{t.skills_path}</span>
+      </h3>
+
+      <div class="timeline">
+        {
+          experiences.map((experience) => (
+            <article class="timeline-entry surface-card">
+              <span class="timeline-marker" aria-hidden="true"></span>
+              <header>
+                <div>
+                  <h4>{experience.role}</h4>
+                  <p>{experience.company}</p>
+                </div>
+                {"dateKey" in experience ? (
+                  <time data-i18n={experience.dateKey}>{t[experience.dateKey]}</time>
+                ) : (
+                  <time>{experience.date}</time>
+                )}
+              </header>
+              <p data-i18n={experience.descriptionKey}>{t[experience.descriptionKey]}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="skill-groups">
+      {
+        skillGroups.map((group) => (
+          <article class="skill-group reveal-on-scroll">
+            <h3 data-i18n={group.key}>{t[group.key]}</h3>
+            <ul>
+              {group.items.map((item) => (
+                <li class="skill-chip surface-card">
+                  <Image
+                    src={item.image}
+                    alt=""
+                    width={40}
+                    height={40}
+                    fit="contain"
+                    quality={80}
+                    loading="lazy"
+                  />
+                  <span>{item.name}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

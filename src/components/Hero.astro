@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+import discord from "../assets/images/discord.webp";
+import github from "../assets/images/github.webp";
+import linkedin from "../assets/images/linkedin.webp";
+import portrait from "../assets/images/Yo.webp";
+import { translations } from "../data/site";
+import Icon from "./Icon.astro";
+
+const t = translations.es;
+---
+
+<section id="Home" class="hero section-anchor" aria-labelledby="hero-title">
+  <div class="hero-copy reveal-on-scroll">
+    <p class="availability">
+      <span class="availability-dot" aria-hidden="true"></span>
+      <span data-i18n="hero_available">{t.hero_available}</span>
+    </p>
+
+    <h1 id="hero-title" class="display-title">
+      <span data-i18n="hero_greeting_1">{t.hero_greeting_1}</span>
+      <span class="hero-alias">
+        <span data-i18n="hero_greeting_2">{t.hero_greeting_2}</span><span class="gradient-text">NotExer</span>
+      </span>
+    </h1>
+
+    <p class="role-line">
+      <span data-typing-base>{t.typing_base}</span><strong data-rotating-role>QA tester</strong>
+    </p>
+
+    <div class="hero-actions">
+      <a
+        class="primary-button"
+        href="/documents/CV_Samuel_Gomez_Restrepo.pdf"
+        download="CV_Samuel_Gomez_Restrepo.pdf"
+      >
+        <Icon name="download" />
+        <span data-i18n="hero_download">{t.hero_download}</span>
+      </a>
+
+      <div class="social-links" aria-label={t.social_label} data-i18n-aria="social_label">
+        <a href="https://github.com/NotExer" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <Image src={github} alt="" width={24} height={24} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/samuel-gomez-restrepo-717238191/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+        >
+          <Image src={linkedin} alt="" width={24} height={24} />
+        </a>
+        <a href="https://discord.gg/WuFJPusGE9" target="_blank" rel="noreferrer" aria-label="Discord">
+          <Image src={discord} alt="" width={24} height={24} />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="portrait-stage reveal-on-scroll"
+    aria-label={t.portrait_label}
+    data-i18n-aria="portrait_label"
+  >
+    <div class="portrait-halo" aria-hidden="true"></div>
+    <div class="portrait-frame">
+      <Image
+        src={portrait}
+        alt="Samuel Gómez, NotExer"
+        width={436}
+        height={436}
+        widths={[320, 384, 436]}
+        sizes="(min-width: 69rem) 436px, (min-width: 62rem) calc(44vw - 3.08rem), (min-width: 30rem) min(436px, calc(88vw - 2.64rem)), calc(88vw - 1.76rem)"
+        loading="eager"
+        fetchpriority="high"
+        quality={82}
+      />
+    </div>
+    <p class="portrait-caption"><span>QA Tester</span><span>Full Stack Dev</span><span>NotExer</span></p>
+  </div>
+</section>

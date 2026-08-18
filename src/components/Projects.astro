@@ -1,0 +1,25 @@
+---
+import { projects, translations } from "../data/site";
+import ProjectCard from "./ProjectCard.astro";
+
+const t = translations.es;
+---
+
+<section id="Proyects" class="content-section section-anchor" aria-labelledby="projects-title">
+  <div class="section-heading centered-heading reveal-on-scroll">
+    <p class="section-index" aria-hidden="true">03</p>
+    <div>
+      <h2 id="projects-title">
+        <span data-i18n="projects_title_1">{t.projects_title_1}</span><span
+          class="gradient-text"
+          data-i18n="projects_title_2">{t.projects_title_2}</span
+        >
+      </h2>
+      <p class="section-subtitle" data-i18n="projects_subtitle">{t.projects_subtitle}</p>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+    {projects.map((project, index) => <ProjectCard project={project} index={index} />)}
+  </div>
+</section>
