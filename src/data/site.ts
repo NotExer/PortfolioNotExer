@@ -221,7 +221,7 @@ export const experiences = [
 export const projects = [
   {
     title: "Color theme",
-    href: "https://color-theme-swart.vercel.app",
+    href: "https://color-theme.notexer.dev",
     video: "/vids/ColorTheme.mp4",
     descriptionKey: "project1_desc",
     stack: ["React", "Tailwind"],
