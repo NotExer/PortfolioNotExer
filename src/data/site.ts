@@ -229,7 +229,7 @@ export const projects = [
   },
   {
     title: "JulianRpo",
-    href: "https://julian-rpo-trainer.vercel.app",
+    href: "https://julian-rpo-trainer.notexer.dev",
     video: "/vids/JulianRpo.mp4",
     descriptionKey: "project2_desc",
     stack: ["Astro", "PHP", "Tailwind"],
@@ -237,7 +237,7 @@ export const projects = [
   },
   {
     title: "Link Short Pro",
-    href: "https://link-short-pro.vercel.app",
+    href: "https://link-short-pro.notexer.dev",
     video: "/vids/LinkShortPro.mp4",
     descriptionKey: "project3_desc",
     stack: ["Python", "Tailwind", "Fast API"],
@@ -245,7 +245,7 @@ export const projects = [
   },
   {
     title: "News Resumer",
-    href: "https://news-resumer.vercel.app",
+    href: "https://news-resumer.notexer.dev",
     video: "/vids/NewsResumer.mp4",
     descriptionKey: "project4_desc",
     stack: ["Astro", "Tailwind", "Gemini API", "Ollama"],
@@ -253,7 +253,7 @@ export const projects = [
   },
   {
     title: "RemooVI",
-    href: "https://remoovi.vercel.app",
+    href: "https://remoovi.notexer.dev",
     video: "/vids/RemooVI.mp4",
     descriptionKey: "project5_desc",
     stack: ["Python", "Tailwind", "Fast API"],
@@ -261,7 +261,7 @@ export const projects = [
   },
   {
     title: "Rues Automatizacion",
-    href: "https://automatizacion-rues.vercel.app",
+    href: "https://automatizacion-rues.notexer.dev",
     video: "/vids/RuesAutomatizacion.mp4",
     descriptionKey: "project6_desc",
     stack: ["Next.js", "Tailwind", "React"],
