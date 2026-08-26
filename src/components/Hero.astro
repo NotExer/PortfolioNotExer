@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 import discord from "../assets/images/discord.webp";
 import github from "../assets/images/github.webp";
 import linkedin from "../assets/images/linkedin.webp";
@@ -8,7 +8,24 @@ import { translations } from "../data/site";
 import Icon from "./Icon.astro";
 
 const t = translations.es;
+const portraitSizes =
+  "(min-width: 69rem) 436px, (min-width: 62rem) calc(44vw - 3.08rem), (min-width: 30rem) min(436px, calc(88vw - 2.64rem)), calc(88vw - 1.76rem)";
+const portraitPreload = await getImage({
+  src: portrait,
+  width: 436,
+  widths: [320, 384, 436],
+  quality: 82,
+});
 ---
+
+<link
+  rel="preload"
+  as="image"
+  href={portraitPreload.src}
+  imagesrcset={portraitPreload.srcSet.attribute}
+  imagesizes={portraitSizes}
+  fetchpriority="high"
+/>
 
 <section id="Home" class="hero section-anchor" aria-labelledby="hero-title">
   <div class="hero-copy">
@@ -58,7 +75,7 @@ const t = translations.es;
   </div>
 
   <div
-    class="portrait-stage reveal-on-scroll"
+    class="portrait-stage"
     aria-label={t.portrait_label}
     data-i18n-aria="portrait_label"
   >
@@ -70,7 +87,7 @@ const t = translations.es;
         width={436}
         height={436}
         widths={[320, 384, 436]}
-        sizes="(min-width: 69rem) 436px, (min-width: 62rem) calc(44vw - 3.08rem), (min-width: 30rem) min(436px, calc(88vw - 2.64rem)), calc(88vw - 1.76rem)"
+        sizes={portraitSizes}
         loading="eager"
         fetchpriority="high"
         quality={82}

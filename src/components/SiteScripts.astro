@@ -150,6 +150,10 @@ import { rotatingRoles, translations } from "../data/site";
     const updateNavigationIndicators = (id, animate = true) => {
       const updates = [];
 
+      if (!animate) {
+        sectionNavigations.forEach((navigation) => navigation.classList.remove("is-indicator-ready"));
+      }
+
       sectionNavigations.forEach((navigation) => {
         const activeLink = [...navigation.querySelectorAll("[data-section-link]")].find(
           (link) => link.getAttribute("href") === `#${id}`,
@@ -157,7 +161,6 @@ import { rotatingRoles, translations } from "../data/site";
         const indicator = navigation.querySelector("[data-navigation-indicator]");
         if (!activeLink || !indicator) return;
 
-        if (!animate) navigation.classList.remove("is-indicator-ready");
         const navigationRect = navigation.getBoundingClientRect();
         const linkRect = activeLink.getBoundingClientRect();
         if (!navigationRect.width || !linkRect.width) return;
