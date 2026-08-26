@@ -132,6 +132,19 @@ import { rotatingRoles, translations } from "../data/site";
     let programmaticSectionId = "";
     let scrollAnimationFrame = 0;
     let sectionSyncFrame = 0;
+    let previousScrollBehavior = null;
+
+    const disableNativeSmoothScroll = () => {
+      if (previousScrollBehavior !== null) return;
+      previousScrollBehavior = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+    };
+
+    const restoreNativeSmoothScroll = () => {
+      if (previousScrollBehavior === null) return;
+      root.style.scrollBehavior = previousScrollBehavior;
+      previousScrollBehavior = null;
+    };
 
     const updateNavigationIndicators = (id, animate = true) => {
       sectionNavigations.forEach((navigation) => {
@@ -176,6 +189,7 @@ import { rotatingRoles, translations } from "../data/site";
       if (scrollAnimationFrame) window.cancelAnimationFrame(scrollAnimationFrame);
       scrollAnimationFrame = 0;
       programmaticSectionId = "";
+      restoreNativeSmoothScroll();
 
       if (syncSection && interrupted) {
         window.requestAnimationFrame(() => syncActiveSectionFromViewport(true));
@@ -184,6 +198,7 @@ import { rotatingRoles, translations } from "../data/site";
 
     const springScrollTo = (section) => {
       cancelSpringScroll(false);
+      disableNativeSmoothScroll();
       programmaticSectionId = section.id;
 
       const scrollMargin = Number.parseFloat(window.getComputedStyle(section).scrollMarginTop) || 0;
@@ -211,6 +226,7 @@ import { rotatingRoles, translations } from "../data/site";
         else {
           scrollAnimationFrame = 0;
           programmaticSectionId = "";
+          restoreNativeSmoothScroll();
         }
       };
 
