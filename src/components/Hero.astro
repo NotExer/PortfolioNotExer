@@ -13,8 +13,12 @@ const portraitSizes =
 const portraitPreload = await getImage({
   src: portrait,
   width: 436,
+  height: 436,
   widths: [320, 384, 436],
   quality: 82,
+  format: "webp",
+  fit: "cover",
+  position: "center",
 });
 ---
 
@@ -90,6 +94,10 @@ const portraitPreload = await getImage({
         sizes={portraitSizes}
         loading="eager"
         fetchpriority="high"
+        decoding="sync"
+        format="webp"
+        fit="cover"
+        position="center"
         quality={82}
       />
     </div>
