@@ -6,6 +6,9 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://notexer.dev",
   output: "static",
+  build: {
+    inlineStylesheets: "always",
+  },
   adapter: vercel({
     staticHeaders: true,
   }),
