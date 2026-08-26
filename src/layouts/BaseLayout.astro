@@ -47,7 +47,16 @@ const socialImage = new URL("/og-image.webp", Astro.site);
     <!-- Google Analytics: cargar después de la ruta crítica para no competir con el LCP -->
     <script is:inline>
       (() => {
+        let analyticsLoaded = false;
+
         const loadAnalytics = () => {
+          if (analyticsLoaded) return;
+          analyticsLoaded = true;
+
+          interactionEvents.forEach((eventName) => {
+            window.removeEventListener(eventName, loadAfterInteraction);
+          });
+
           window.dataLayer = window.dataLayer || [];
           window.gtag = window.gtag || function gtag() {
             window.dataLayer.push(arguments);
@@ -61,8 +70,15 @@ const socialImage = new URL("/og-image.webp", Astro.site);
           document.head.appendChild(script);
         };
 
-        const schedule = window.requestIdleCallback || ((callback) => window.setTimeout(callback, 1500));
-        window.addEventListener("load", () => schedule(loadAnalytics, { timeout: 2000 }), { once: true });
+        const interactionEvents = ["pointerdown", "keydown", "scroll", "touchstart"];
+        const loadAfterInteraction = () => window.setTimeout(loadAnalytics, 0);
+
+        interactionEvents.forEach((eventName) => {
+          window.addEventListener(eventName, loadAfterInteraction, { once: true, passive: true });
+        });
+
+        // Keep analytics available for visitors who never interact, without affecting the initial load.
+        window.setTimeout(loadAnalytics, 10000);
       })();
     </script>
 
