@@ -127,6 +127,7 @@ import { rotatingRoles, translations } from "../data/site";
     const sections = [...document.querySelectorAll(".section-anchor")];
     const sectionNavigations = [...document.querySelectorAll("[data-section-navigation]")];
     const sectionArrivalTimers = new WeakMap();
+    const sectionArrivalFrames = new WeakMap();
     let activeSectionId = "";
     let indicatorResizeFrame = 0;
     let programmaticSectionId = "";
@@ -147,6 +148,8 @@ import { rotatingRoles, translations } from "../data/site";
     };
 
     const updateNavigationIndicators = (id, animate = true) => {
+      const updates = [];
+
       sectionNavigations.forEach((navigation) => {
         const activeLink = [...navigation.querySelectorAll("[data-section-link]")].find(
           (link) => link.getAttribute("href") === `#${id}`,
@@ -154,16 +157,20 @@ import { rotatingRoles, translations } from "../data/site";
         const indicator = navigation.querySelector("[data-navigation-indicator]");
         if (!activeLink || !indicator) return;
 
+        if (!animate) navigation.classList.remove("is-indicator-ready");
         const navigationRect = navigation.getBoundingClientRect();
         const linkRect = activeLink.getBoundingClientRect();
         if (!navigationRect.width || !linkRect.width) return;
 
-        if (!animate) navigation.classList.remove("is-indicator-ready");
+        updates.push({ navigation, x: linkRect.left - navigationRect.left, width: linkRect.width });
+      });
+
+      updates.forEach(({ navigation, x, width }) => {
         navigation.style.setProperty(
           "--navigation-indicator-x",
-          `${linkRect.left - navigationRect.left}px`,
+          `${x}px`,
         );
-        navigation.style.setProperty("--navigation-indicator-width", `${linkRect.width}px`);
+        navigation.style.setProperty("--navigation-indicator-width", `${width}px`);
 
         if (!navigation.classList.contains("is-indicator-ready")) {
           window.requestAnimationFrame(() => navigation.classList.add("is-indicator-ready"));
@@ -174,9 +181,14 @@ import { rotatingRoles, translations } from "../data/site";
     const playSectionArrival = (section) => {
       const previousTimer = sectionArrivalTimers.get(section);
       if (previousTimer) window.clearTimeout(previousTimer);
+      const previousFrame = sectionArrivalFrames.get(section);
+      if (previousFrame) window.cancelAnimationFrame(previousFrame);
       section.classList.remove("is-section-arriving");
-      void section.offsetWidth;
-      section.classList.add("is-section-arriving");
+      const frame = window.requestAnimationFrame(() => {
+        section.classList.add("is-section-arriving");
+        sectionArrivalFrames.delete(section);
+      });
+      sectionArrivalFrames.set(section, frame);
       const timer = window.setTimeout(() => {
         section.classList.remove("is-section-arriving");
         sectionArrivalTimers.delete(section);

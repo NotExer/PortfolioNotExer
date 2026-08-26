@@ -44,15 +44,26 @@ const socialImage = new URL("/og-image.webp", Astro.site);
 
     <title>{title}</title>
 
-    <!-- Google Analytics -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-NTJTVBV5N6"></script>
+    <!-- Google Analytics: cargar después de la ruta crítica para no competir con el LCP -->
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-NTJTVBV5N6");
+      (() => {
+        const loadAnalytics = () => {
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = window.gtag || function gtag() {
+            window.dataLayer.push(arguments);
+          };
+          window.gtag("js", new Date());
+          window.gtag("config", "G-NTJTVBV5N6");
+
+          const script = document.createElement("script");
+          script.async = true;
+          script.src = "https://www.googletagmanager.com/gtag/js?id=G-NTJTVBV5N6";
+          document.head.appendChild(script);
+        };
+
+        const schedule = window.requestIdleCallback || ((callback) => window.setTimeout(callback, 1500));
+        window.addEventListener("load", () => schedule(loadAnalytics, { timeout: 2000 }), { once: true });
+      })();
     </script>
 
     <script is:inline>
